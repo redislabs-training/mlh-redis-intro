@@ -18,16 +18,29 @@
 ## [Lists ](https://redis.io/topics/data-types-intro#redis-lists)
 - Push/Pop functionality, but from either end
 - Great for implementing Stacks and Queues
+  
+### Queue example: Housekeeping
 
-### [Sorted Set](https://redis.io/topics/data-types-intro#redis-sorted-sets)
+Scenario: Front-Desk receives requests for service from guests. They enter the reqeusts into a queue backed by Redis and the housekeepers receive notifications of the requests in the order they were created.
+```bash
+# Producer (Front-Desk)
+> LPUSH jobs '{"room": 101,"job": "Cleaning"}'
+> LPUSH jobs '{"room": 309,"job": "Taxi"}'
+> LPUSH jobs '{"room": 484,"job": "Extra Towels"}'
+# Consumer (Housekeepers)
+> RPOP jobs
+"{\"room\": 101,\"job\": \"Cleaning\"}"
+```
+
+## [Sorted Set](https://redis.io/topics/data-types-intro#redis-sorted-sets)
 
 Adding members and scores to a sorted set:
 ```bash
+$ redis-cli
 > ZADD team_scores 23740 Brian
  (integer) 1
 > ZADD team_scores 12010 Guy 56750 Justin 78130 Simon 66320 Steve 86590 Suze
 (integer) 5
->
 ```
 
 Let's read the sorted set back:
