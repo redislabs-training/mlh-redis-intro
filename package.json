@@ -1,0 +1,24 @@
+{
+  "name": "introduction-to-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "basics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justincastilla/introduction-to-redis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justincastilla/introduction-to-redis/issues"
+  },
+  "homepage": "https://github.com/justincastilla/introduction-to-redis#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "redis": "^4.0.4"
+  },
+  "type": "module"
+}
