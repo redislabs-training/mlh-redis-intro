@@ -1,4 +1,4 @@
-# introduction-to-redis
+# What on Earth is Redis?
 
 ## [Redis Keys](https://redis.io/topics/data-types-intro#redis-keys)
 - Binary Safe (if it can be converted into binary, you can store it)
